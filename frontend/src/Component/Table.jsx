@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ChartComponent from "./chart";
 
 export default function Table({ Deletuser, UpdatedUser }) {
@@ -63,7 +63,7 @@ export default function Table({ Deletuser, UpdatedUser }) {
               </tr>
             </thead>
             <tbody>
-              {data.map((elem, index) => {
+              {data.map((elem) => {
                 return (
                   <tr key={elem._id}>
                     <td></td>

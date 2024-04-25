@@ -1,4 +1,19 @@
-export default function UpdateUser({ handleOnSubmit, value, handleChange }) {
+import PropTypes from "prop-types"; // Ajoutez cette importation en haut de votre fichier
+
+// Définissez les types attendus pour vos props
+UpdatedUser.propTypes = {
+  handleOnSubmit: PropTypes.func.isRequired,
+  value: PropTypes.shape({
+    count: PropTypes.string.isRequired,
+    firstname: PropTypes.string.isRequired,
+    bankname: PropTypes.string.isRequired,
+    money: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  }).isRequired,
+  handleOnChange: PropTypes.func.isRequired,
+};
+
+export default function UpdatedUser({ handleOnSubmit, value, handleOnChange }) {
   return (
     <>
       <div id="editEmployeeModal" className="modal fade">
@@ -23,7 +38,7 @@ export default function UpdateUser({ handleOnSubmit, value, handleChange }) {
                     type="text"
                     value={value.count}
                     name="count"
-                    onChange={handleChange}
+                    onChange={handleOnChange}
                     className="form-control"
                   />
                 </div>
@@ -33,7 +48,7 @@ export default function UpdateUser({ handleOnSubmit, value, handleChange }) {
                     type="text"
                     value={value.firstname}
                     name="firstname"
-                    onChange={handleChange}
+                    onChange={handleOnChange}
                     className="form-control"
                   />
                 </div>
@@ -43,7 +58,7 @@ export default function UpdateUser({ handleOnSubmit, value, handleChange }) {
                     type="text"
                     value={value.bankname}
                     name="bankname"
-                    onChange={handleChange}
+                    onChange={handleOnChange}
                     className="form-control"
                   />
                 </div>
@@ -53,7 +68,7 @@ export default function UpdateUser({ handleOnSubmit, value, handleChange }) {
                     type="text"
                     value={value.money}
                     name="money"
-                    onChange={handleChange}
+                    onChange={handleOnChange}
                     className="form-control"
                   />
                 </div>
@@ -64,7 +79,7 @@ export default function UpdateUser({ handleOnSubmit, value, handleChange }) {
                     type="date"
                     value={value.date}
                     name="date"
-                    onChange={handleChange}
+                    onChange={handleOnChange}
                     className="form-control"
                   />
                 </div>
